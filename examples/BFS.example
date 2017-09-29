@@ -1,0 +1,18 @@
+public static int[] bfs(ArrayList[] graph, int v) {
+	int n = graph.length;
+	int[] distance = new distance[n];
+	Arrays.fill(distance, -1);
+	visited[n] = true;
+	ArrayDeque<Integer> q = new ArrayDeque<Integer>();
+	q.offer(v);
+	while (q.size() > 0) {
+		int cur = q.poll();
+		for (Integer next : ((ArrayList<Integer>)graph)[cur]) {
+			if (distance[next] == -1) {
+				distance[next] = distance[cur]+1;
+				q.offer(next);
+			}
+		}
+	}
+	return distance;
+}

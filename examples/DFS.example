@@ -1,0 +1,6 @@
+public static void dfs(ArrayList[] graph, boolean[] visited, int v) {
+	visited[v] = true;
+	for (Integer next : ((ArrayList<Integer>)graph)[v])
+		if (!visited[next])
+ 			dfs(graph, visited, next);
+}
